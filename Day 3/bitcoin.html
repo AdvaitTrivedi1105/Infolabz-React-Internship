@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function load(){
+            const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+            let myObject = await (await fetch(url)).json();
+            document.write(myObject["bpi"]["USD"]["rate"]);
+        }
+
+        load();
+    </script>
+</body>
+</html>

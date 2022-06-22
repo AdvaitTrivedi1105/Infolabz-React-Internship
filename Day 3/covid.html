@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function load(){
+            const url = "https://data.covid19india.org/data.json";
+            let myObject = await (await fetch(url)).json();
+            // document.write(myObject["cases_time_series"][0]["date"]);
+            document.write("<table border='1' width='100%' style='background-color:grey;'>")
+
+            for(var i=0;i<myObject["cases_time_series"].length;i++){
+                if (Number(myObject["cases_time_series"][i]["dailyconfirmed"])>=30000){
+
+                    document.write("<tr style='background-color:red;color:white;'><td style='border-radius:3px;text-align:center;'>"+(i+1)+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["date"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailyconfirmed"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailyrecovered"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailydeceased"]+"</td>"+"</td></tr>");
+                }
+                else{
+                    document.write("<tr style='background-color:yellow;'><td style='border-radius:3px;text-align:center;'>"+(i+1)+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["date"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailyconfirmed"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailyrecovered"]+"</td>"+"<td style='border-radius:3px;text-align:center;'>"+myObject["cases_time_series"][i]["dailydeceased"]+"</td>"+"</td></tr>");
+                }
+            }
+            document.write("</table>");
+        }
+        load();
+    </script>
+</body>
+</html>

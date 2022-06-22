@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var players = {
+				"virat":[25,15,7,12,65],
+				"rohit":[55,15,33,7,45],
+				"dhoni":[15,32,0,75,65],
+				"shikhar":[50,20,25,75,45],
+				"pant":[10,25,22,55,75],
+				"rahane":[15,25,55,45,0],
+			};
+        var table = "<table border='2'><th>PLAYER</th><th>Match 1</th><th>Match 2</th><th>Match 3</th><th>Match 4</th><th>Match 5</th>";
+            for(var i in players){
+            var row = "<tr>";
+            // var row = "<tr><td>"+i+"</td><td>"+players[i][0]+"</td><td>"+players[i][1]+"</td><td>"+players[i][2]+"</td><td>"+players[i][3]+"</td><td>"+players[i][4]+"</td></tr>";
+            var column = "<td>"+i+"</td>";
+            for(var j in players[i]){
+                if (j==0){
+                }
+                document.write(players[i][j]+"\n");
+                if (players[i][j]==0){
+                    
+                }
+                else if (players[i][j]>=30 && players[i][j]<50){
+
+                }
+                else if (players[i][j]>=50){
+
+                }
+                
+            }
+            table += row;
+        }
+        table += "</table>";
+        document.write(table);
+    </script>
+</body>
+</html>
