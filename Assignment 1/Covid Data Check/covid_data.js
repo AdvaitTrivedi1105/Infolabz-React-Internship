@@ -11,6 +11,7 @@ async function getData(){
         if (day["date"] == date){
             cases.innerText = day["dailyconfirmed"];
             deaths.innerText = day["dailydeceased"];
+            break;
         }
     }
 }

@@ -17,6 +17,7 @@ async function load(){
         if(data[i]["schemeCode"] == code){
             name.innerText = data[i]["schemeName"];
             check = true;
+            break;
         }
     }
 
