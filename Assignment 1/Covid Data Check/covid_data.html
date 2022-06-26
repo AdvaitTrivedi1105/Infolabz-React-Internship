@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Data Check</title>
+    <script src="covid_data.js"></script>
+</head>
+<body>
+    <h1>Covid Data</h1>
+    <br>
+    Date : <input type="text" name="date" id="date">
+    &nbsp; <input type="submit" value="Submit" onclick="getData();  return false;">
+    <br>
+    <br>
+    <div class="container" id="container">
+        <table border="2">
+            <tr>
+                <td>NEW CASES</td>
+                <td id="cases"></td>
+            </tr>
+            <tr>
+                <td>NEW DEATHS</td>
+                <td id="deaths"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
